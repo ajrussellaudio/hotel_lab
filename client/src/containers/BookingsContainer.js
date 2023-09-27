@@ -11,8 +11,12 @@ export function BookingsContainer() {
   }, []);
 
   const createNewBooking = (newBooking) => {
-    console.log({ newBooking });
     BookingsService.create(newBooking);
+    BookingsService.getAll(setBookings);
+  };
+
+  const deleteBooking = (id) => {
+    BookingsService.destroy(id);
     BookingsService.getAll(setBookings);
   };
 
@@ -20,7 +24,7 @@ export function BookingsContainer() {
     <>
       <NewBookingForm onSubmit={createNewBooking} />
       {bookings.map((booking) => (
-        <Booking {...booking} />
+        <Booking {...booking} onDelete={deleteBooking} />
       ))}
     </>
   );

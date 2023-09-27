@@ -14,4 +14,8 @@ export const BookingsService = {
       headers: { "Content-Type": "application/json" },
     });
   },
+
+  destroy(bookingId) {
+    fetch(bookingsServiceUrl(`/${bookingId}`), { method: "DELETE" });
+  },
 };
