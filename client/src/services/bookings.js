@@ -15,6 +15,14 @@ export const BookingsService = {
     });
   },
 
+  update(bookingId, data) {
+    fetch(bookingsServiceUrl(`/${bookingId}`), {
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+  },
+
   destroy(bookingId) {
     fetch(bookingsServiceUrl(`/${bookingId}`), { method: "DELETE" });
   },

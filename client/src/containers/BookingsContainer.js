@@ -21,12 +21,17 @@ export function BookingsContainer() {
     BookingsService.getAll(setBookings);
   };
 
+  const updateBooking = (id, data) => {
+    BookingsService.update(id, data);
+    BookingsService.getAll(setBookings);
+  };
+
   return (
     <>
       <NewBookingForm onSubmit={createNewBooking} />
       <Container>
         {bookings.map((booking) => (
-          <Booking {...booking} onDelete={deleteBooking} />
+          <Booking {...booking} onUpdate={updateBooking} onDelete={deleteBooking} />
         ))}
       </Container>
     </>

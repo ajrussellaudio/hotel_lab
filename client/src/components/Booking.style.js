@@ -26,6 +26,6 @@ export const Name = styled.span`
 
 export const Email = styled.pre``;
 
-export const Status = styled.span`
+export const Status = styled.button`
   color: ${(props) => (props.checkedIn ? "rgb(33, 104, 105)" : "rgb(247, 23, 39)")};
 `;
