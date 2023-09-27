@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BookingsService } from "../services/bookings";
 import { Booking } from "../components/Booking";
 import { NewBookingForm } from "../components/NewBookingForm";
+import { Container } from "./BookingsContainer.style";
 
 export function BookingsContainer() {
   const [bookings, setBookings] = useState([]);
@@ -23,9 +24,11 @@ export function BookingsContainer() {
   return (
     <>
       <NewBookingForm onSubmit={createNewBooking} />
-      {bookings.map((booking) => (
-        <Booking {...booking} onDelete={deleteBooking} />
-      ))}
+      <Container>
+        {bookings.map((booking) => (
+          <Booking {...booking} onDelete={deleteBooking} />
+        ))}
+      </Container>
     </>
   );
 }

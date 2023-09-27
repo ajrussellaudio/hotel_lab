@@ -1,10 +1,12 @@
+import { Button, Card, Email, Name, Status } from "./Booking.style";
+
 export function Booking({ name, email, checkedIn, _id, onDelete }) {
   return (
-    <div>
-      <span>{name}</span>
-      <span>{email}</span>
-      <span>Status: {checkedIn ? "Checked in ✅" : "Not checked in ❌"}</span>
-      <button onClick={() => onDelete(_id)}>Delete</button>
-    </div>
+    <Card>
+      <Name>{name}</Name>
+      <Email>{email}</Email>
+      <Status checkedIn={checkedIn}>{checkedIn ? "Checked in ✅" : "Not checked in ❌"}</Status>
+      <Button onClick={() => onDelete(_id)}>Delete</Button>
+    </Card>
   );
 }

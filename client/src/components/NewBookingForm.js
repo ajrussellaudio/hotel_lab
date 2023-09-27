@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Button, Checkbox, Form, Input } from "./NewBookingForm.style";
 
 const initialState = {
   name: "",
@@ -9,8 +10,15 @@ const initialState = {
 export function NewBookingForm({ onSubmit }) {
   const [formData, setFormData] = useState(initialState);
 
+  useEffect(() => {
+    console.log({ formData });
+  }, [formData]);
+
   const handleChange = (e) => {
-    setFormData((previousFormData) => ({ ...previousFormData, [e.target.id]: e.target.value }));
+    setFormData((previousFormData) => ({
+      ...previousFormData,
+      [e.target.id]: e.target.type === "checkbox" ? e.target.checked : e.target.value,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -19,17 +27,17 @@ export function NewBookingForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label htmlFor="name">Name</label>
-      <input id="name" name="name" value={formData.name} onChange={handleChange} />
+      <Input id="name" name="name" value={formData.name} onChange={handleChange} />
 
       <label htmlFor="email">Email</label>
-      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
+      <Input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
 
       <label htmlFor="checkedIn">Checked In?</label>
-      <input type="checkbox" name="checkedIn" id="checkedIn" checked={formData.checkedIn} onChange={handleChange} />
+      <Checkbox name="checkedIn" id="checkedIn" checked={formData.checkedIn} onChange={handleChange} />
 
-      <button type="submit">Add New Booking</button>
-    </form>
+      <Button type="submit">Add New Booking</Button>
+    </Form>
   );
 }
