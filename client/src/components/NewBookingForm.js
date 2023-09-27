@@ -29,10 +29,10 @@ export function NewBookingForm({ onSubmit }) {
   return (
     <Form onSubmit={handleSubmit}>
       <label htmlFor="name">Name</label>
-      <Input id="name" name="name" value={formData.name} onChange={handleChange} />
+      <Input id="name" name="name" required value={formData.name} onChange={handleChange} />
 
       <label htmlFor="email">Email</label>
-      <Input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
+      <Input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} />
 
       <label htmlFor="checkedIn">Checked In?</label>
       <Checkbox name="checkedIn" id="checkedIn" checked={formData.checkedIn} onChange={handleChange} />
