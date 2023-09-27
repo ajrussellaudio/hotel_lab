@@ -7,7 +7,6 @@ export const Form = styled.form`
   grid-template-columns: 10ch 1fr;
   padding: 1rem 2rem;
   row-gap: 1rem;
-  border-bottom: 1px solid rgb(254, 254, 252);
 
   & label {
     grid-column: 1 / span 1;
@@ -27,6 +26,8 @@ export const Button = styled(BaseButton)`
 
 export const Input = styled.input`
   padding: 0.5rem;
+  border: 0;
+  border-radius: 0.5rem;
   width: 100%;
 `;
 

@@ -10,7 +10,7 @@ export function Booking({ name, email, checkedIn, _id, onUpdate, onDelete }) {
       <Name>{name}</Name>
       <Email>{email}</Email>
       <Status checkedIn={checkedIn} onClick={handleToggleCheckedIn}>
-        {checkedIn ? "Checked in ✅" : "Not checked in ❌"}
+        {checkedIn ? "✅ Checked in" : "❌ Not checked in"}
       </Status>
       <Button onClick={() => onDelete(_id)}>Delete</Button>
     </Card>

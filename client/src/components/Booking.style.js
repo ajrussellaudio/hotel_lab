@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { BaseButton } from "./shared.style";
 
 export const Card = styled.div`
-  border: 1px solid rgb(142, 158, 146);
   border-radius: 1rem;
   padding: 1rem;
   max-width: fit-content;
@@ -12,6 +11,7 @@ export const Card = styled.div`
   background-color: rgb(254, 254, 252);
   color: rgb(62, 0, 7);
   font-family: "Work Sans", sans-serif;
+  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.2);
 `;
 
 export const Button = styled(BaseButton)`
@@ -26,6 +26,6 @@ export const Name = styled.span`
 
 export const Email = styled.pre``;
 
-export const Status = styled.button`
+export const Status = styled(BaseButton)`
   color: ${(props) => (props.checkedIn ? "rgb(33, 104, 105)" : "rgb(247, 23, 39)")};
 `;
