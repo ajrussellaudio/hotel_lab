@@ -4,6 +4,8 @@ const MongoClient = require("mongodb").MongoClient;
 
 const app = express();
 
+app.use(express.json());
+
 MongoClient.connect("mongodb://127.0.0.1:27017").then((client) => {
   const db = client.db("hotel");
   const bookingsCollection = db.collection("bookings");
