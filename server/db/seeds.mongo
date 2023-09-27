@@ -1,0 +1,26 @@
+use hotel;
+
+db.dropDatabase();
+
+db.bookings.insertMany([
+  {
+    name: "Steve Rogers",
+    email: "cap@avengers.com",
+    checkedIn: false,
+  },
+  {
+    name: "Bruce Wayne",
+    email: "bruciebaby@wayneenterprises.com",
+    checkedIn: true,
+  },
+  {
+    name: "Natasha Romanoff",
+    email: "nat@blackwidow.ru",
+    checkedIn: true,
+  },
+  {
+    name: "Lex Luthor",
+    email: "ceo@lexcorp.com",
+    checkedIn: false,
+  }
+]);
